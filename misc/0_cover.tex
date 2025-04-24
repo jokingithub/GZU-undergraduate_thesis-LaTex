@@ -1,0 +1,56 @@
+% 本页面为封面页，用于填写毕业论文的基本信息，一般不需要修改，可按需修改。
+
+% Usage: \dunderline[<offset>]{<line_thickness>}
+\newcommand\dunderline[3][-1pt]{{%
+  \setbox0=\hbox{#3}
+  \ooalign{\copy0\cr\rule[\dimexpr#1-#2\relax]{\wd0}{#2}}}}
+
+% Cover Page
+% Cover Page
+\begin{titlepage}
+  % 调整顶部间距
+  \vspace*{0cm}  % 可根据需要减少初始间距
+
+  \begin{tabular}{@{}c@{\hspace{0.5cm}}c@{}}
+    \includegraphics[width=0.23\textwidth]{images/logo.png} &
+    \includegraphics[width=0.47\textwidth]{images/header_gz.png} \\
+  \end{tabular}
+
+  \vspace*{1.2cm}  % 替代原来的-3mm
+  % 标题部分保持不变
+  \centering
+  {\heiti\zihao{2}\ziju{0.12} 本科毕业论文（设计）}
+
+
+  \vspace{2cm}
+
+  \zihao{3}\textbf{\heiti\thesisTitle}
+
+  \vspace{1.8cm}
+
+  \flushleft
+  \begin{spacing}{2}
+    \hspace{27mm}\songti\zihao{3}\selectfont{学\hspace{11mm}院：
+    \dunderline[-10pt]{1pt}{\makebox[78mm][c]{\deptName}}}
+
+    \hspace{27mm}\songti\zihao{3}\selectfont{专\hspace{11mm}业：
+    \dunderline[-10pt]{1pt}{\makebox[78mm][c]{\majorName}}}
+
+    \hspace{27mm}\songti\zihao{3}\selectfont{班\hspace{11mm}级：
+    \dunderline[-10pt]{1pt}{\makebox[78mm][c]{\yourclass}}}
+
+    \hspace{27mm}\songti\zihao{3}\selectfont{学\hspace{11mm}号：
+    \dunderline[-10pt]{1pt}{\makebox[78mm][c]{\yourStudentID}}}
+
+    \hspace{27mm}\songti\zihao{3}\selectfont{学生姓名：
+    \dunderline[-10pt]{1pt}{\makebox[78mm][c]{\yourName}}}
+
+    \hspace{27mm}\songti\zihao{3}\selectfont{指导教师：
+    \dunderline[-10pt]{1pt}{\makebox[78mm][c]{\mentorName}}}
+  \end{spacing}
+
+  \vspace{1.5cm}
+
+  \centering
+  \zihao{3}\ziju{0.5}\heiti\textbf{\today}
+\end{titlepage}

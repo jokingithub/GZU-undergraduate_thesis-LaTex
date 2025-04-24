@@ -1,0 +1,33 @@
+% 参考文献开始
+% \addcontentsline{toc}{chapter}{参考文献}
+% \chapter*{\vskip 10bp \textmd{参考文献} \vskip -6bp}
+
+% 设置参考文献字号为 5 号
+\renewcommand*{\bibfont}{\zihao{5}}
+% 设置参考文献各个项目之间的垂直距离为 0
+\setlength{\bibitemsep}{0ex}
+\setlength{\bibnamesep}{0ex}
+\setlength{\bibinitsep}{0ex}
+% 设置单倍行距
+\renewcommand{\baselinestretch}{1.2}
+% 设置参考文献顺序标签 `[1]` 与文献内容 `作者. 文献标题...` 的间距
+\setlength{\biblabelsep}{-2mm}
+\settowidth{\labelwidth}{\mkbibbrackets{999}\hspace{\biblabelsep}}
+% 设置整体缩进 = 标签宽度 + 标签后间距
+\setlength{\bibhang}{\labelwidth}
+% 设置参考文献后文缩进为 0（与 Word 模板保持一致）
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
+\DeclareFieldFormat{bibentrysetflag}{\mbox{}}
+
+
+\renewcommand{\itemcmd}{%
+  \makebox[\labelwidth][l]{\mkbibbrackets{\printfield{labelnumber}}}%
+  \hspace{\biblabelsep}%
+}
+
+
+% 删除默认的「参考文献 / Reference」标题，使用上面定义的 section 标题
+
+\printbibliography
+
+
